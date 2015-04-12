@@ -1,5 +1,16 @@
 [{  
     "id": "file", "children":[  
         {"caption": "Generate Folder Of String","command": "generate_folder_of_string"}  
-    ]  
+    ]
+},{  
+    "id": "preferences", "children":[{
+    	"id": "package-settings",
+    	"children": [{
+    		"caption": "Generate Folder Of String",
+    		"children": [{
+    			"caption": "Settings",
+    			"command": "generate_folder_of_string_set_settings"
+    		}]
+    	}]
+    }]
 }] 
