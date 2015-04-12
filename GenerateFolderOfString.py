@@ -2,9 +2,12 @@ import sublime, sublime_plugin
 
 import os, os.path
 
+PLUGIN_FOLDER = os.path.dirname(os.path.realpath(__file__))
+SETTINGS_FILE = "GenerateFolderOfString.sublime-settings"
+
 class GenerateFolderCore:
 	def gen(self, path):
-		settings = sublime.load_settings('GenerateFolderOfString.sublime-settings')
+		settings = sublime.load_settings(SETTINGS_FILE)
 		if settings.get('start_level') is None:
 			self.start_level = 1
 		else:
@@ -84,3 +87,7 @@ class DoGenerateFolderOfStringCommand(sublime_plugin.TextCommand):
 				write_path = os.path.dirname(self.view.file_name())
 
 		self.view.insert(edit, 0, GenerateFolderCore().gen(write_path))
+
+class GenerateFolderOfStringSetSettingsCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+  	self.view.window().open_file(PLUGIN_FOLDER + "/" + SETTINGS_FILE)
