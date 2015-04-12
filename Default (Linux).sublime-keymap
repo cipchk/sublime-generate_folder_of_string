@@ -1,0 +1,6 @@
+[
+    {
+        "keys": ["ctrl+alt+g,ctrl+t"],
+        "command": "do_generate_folder_of_string"
+    }
+]
