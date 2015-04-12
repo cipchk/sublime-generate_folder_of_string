@@ -15,7 +15,7 @@ class GenerateFolderCore:
 		else:
 			self.prefix_character = str(settings.get('prefix_character'))
 
-		return os.linesep.join(self.get_files(path, self.start_level))
+		return '\n'.join(self.get_files(path, self.start_level))
 
 	def get_files(self, path, level):
 		all_file = []
